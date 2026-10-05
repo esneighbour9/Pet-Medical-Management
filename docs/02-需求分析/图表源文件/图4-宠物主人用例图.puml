@@ -1,0 +1,44 @@
+@startuml
+' 图4 宠物主人用例图
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName "Noto Sans CJK SC"
+
+actor "宠物主人" as Owner
+
+rectangle "宠物医疗管理系统" {
+  usecase "注册/登录" as O0
+  usecase "维护个人信息" as O1
+
+  package "宠物与预约" {
+    usecase "维护宠物档案" as P1
+    usecase "在线预约挂号" as P2
+    usecase "查看/取消预约" as P3
+  }
+
+  package "诊疗信息查询" {
+    usecase "查看病历" as Q1
+    usecase "查看处方与用药" as Q2
+    usecase "查看收费记录" as Q3
+  }
+
+  package "信息服务" {
+    usecase "查看公告资讯" as R1
+    usecase "接收预约提醒" as R2
+  }
+}
+
+Owner --> O0
+Owner --> O1
+Owner --> P1
+Owner --> P2
+Owner --> P3
+Owner --> Q1
+Owner --> Q2
+Owner --> Q3
+Owner --> R1
+Owner --> R2
+
+P2 ..> O0 : <<include>>
+P3 ..> O0 : <<include>>
+@enduml
