@@ -1,0 +1,54 @@
+@startuml
+' 图2 管理员用例图
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName "Noto Sans CJK SC"
+
+actor "管理员" as Admin
+
+rectangle "宠物医疗管理系统" {
+  usecase "登录认证" as A0
+
+  package "人员与权限" {
+    usecase "医生账号管理" as A1
+    usecase "宠物主人账号管理" as A2
+    usecase "角色与权限分配" as A3
+  }
+
+  package "基础数据" {
+    usecase "科室管理" as B1
+    usecase "医生排班管理" as B2
+    usecase "服务项目与价格管理" as B3
+    usecase "药品信息管理" as B4
+  }
+
+  package "业务管理" {
+    usecase "宠物档案管理" as C1
+    usecase "库存入库与出库" as C2
+    usecase "库存预警查看" as C3
+    usecase "收费与结算管理" as C4
+    usecase "公告与资讯管理" as C5
+  }
+
+  package "决策支持" {
+    usecase "数据统计与报表" as D1
+    usecase "系统日志查看" as D2
+  }
+}
+
+Admin --> A0
+Admin --> A1
+Admin --> A2
+Admin --> A3
+Admin --> B1
+Admin --> B2
+Admin --> B3
+Admin --> B4
+Admin --> C1
+Admin --> C2
+Admin --> C3
+Admin --> C4
+Admin --> C5
+Admin --> D1
+Admin --> D2
+@enduml
