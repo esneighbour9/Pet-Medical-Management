@@ -5,7 +5,7 @@
 ## 一、项目简介
 
 面向中小型宠物医院，采用前后端分离的 B/S 架构，构建覆盖
-**宠物档案 → 预约挂号 → 接诊诊疗 → 处方用药 → 药品库存 → 数据统计**
+**宠物档案 → 预约挂号 → 接诊诊疗 → 处方用药 → 药品库存 → 收费统计**
 完整业务闭环的信息化管理系统，服务 **管理员、医生、宠物主人** 三类角色。
 
 ## 二、技术栈
@@ -13,7 +13,8 @@
 | 层次 | 技术选型 |
 | --- | --- |
 | 前端 | Vue 3 + Element Plus + Vue Router + Pinia + Axios + Vite |
-| 后端 | Spring Boot 3.x + Spring MVC + Spring Security + JWT + MyBatis-Plus |
+| 后端 | Spring Boot 3.x + Spring MVC + MyBatis-Plus |
+| 认证授权 | JWT + 自定义拦截器（基于 RBAC） |
 | 数据库 | MySQL 8.0 |
 | 构建 | Maven（后端）、npm（前端） |
 | 部署 | Nginx（前端）+ 可执行 Jar（后端） |
@@ -27,7 +28,7 @@
 ├── database/      SQL 建表脚本、初始化数据
 ├── deploy/        部署配置（Nginx、启动脚本等）
 ├── scripts/       辅助工具脚本
-├── docs/          全部过程文档与交付文档（见 03-文档策略）
+├── docs/          全部过程文档与交付文档（见 03-文档策略.md）
 │   ├── 00-项目规范/
 │   ├── 01-开题/
 │   ├── 02-需求分析/
@@ -52,7 +53,7 @@
 - JDK 17
 - Node.js 18+
 - MySQL 8.0
-- Maven 3.8+
+- Maven 3.8+（或直接用项目自带的 Maven Wrapper `mvnw`，无需单独安装）
 
 ## 六、快速开始
 
