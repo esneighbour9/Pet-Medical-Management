@@ -1,5 +1,5 @@
 @startuml
-' 图2 管理员用例图
+' 图2 管理员用例图（六模块）
 left to right direction
 skinparam shadowing false
 skinparam defaultFontName "Noto Sans CJK SC"
@@ -27,12 +27,7 @@ rectangle "宠物医疗管理系统" {
     usecase "库存入库与出库" as C2
     usecase "库存预警查看" as C3
     usecase "收费与结算管理" as C4
-    usecase "公告与资讯管理" as C5
-  }
-
-  package "决策支持" {
-    usecase "数据统计与报表" as D1
-    usecase "系统日志查看" as D2
+    usecase "收入统计查看" as C5
   }
 }
 
@@ -49,6 +44,4 @@ Admin --> C2
 Admin --> C3
 Admin --> C4
 Admin --> C5
-Admin --> D1
-Admin --> D2
 @enduml
