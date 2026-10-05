@@ -1,5 +1,5 @@
 @startuml
-' 图1 系统总体用例图
+' 图1 系统总体用例图（六模块）
 left to right direction
 skinparam shadowing false
 skinparam defaultFontName "Noto Sans CJK SC"
@@ -13,12 +13,9 @@ rectangle "宠物医疗管理系统" {
   usecase "用户与权限管理" as UC01
   usecase "宠物档案管理" as UC02
   usecase "预约挂号管理" as UC03
-  usecase "接诊与电子病历" as UC04
-  usecase "处方与用药" as UC05
-  usecase "药品与库存管理" as UC06
-  usecase "服务项目与收费" as UC07
-  usecase "公告与资讯" as UC08
-  usecase "数据统计与报表" as UC09
+  usecase "诊疗与电子病历" as UC04
+  usecase "药品与库存管理" as UC05
+  usecase "收费与统计管理" as UC06
 }
 
 Admin --> UC00
@@ -27,18 +24,14 @@ Owner --> UC00
 
 Admin --> UC01
 Admin --> UC02
+Admin --> UC05
 Admin --> UC06
-Admin --> UC07
-Admin --> UC08
-Admin --> UC09
 
 Doctor --> UC02
 Doctor --> UC03
 Doctor --> UC04
-Doctor --> UC05
 
 Owner --> UC02
 Owner --> UC03
-Owner --> UC07
-Owner --> UC08
+Owner --> UC06
 @enduml

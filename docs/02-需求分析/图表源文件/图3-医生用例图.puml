@@ -1,5 +1,5 @@
 @startuml
-' 图3 医生用例图
+' 图3 医生用例图（六模块）
 left to right direction
 skinparam shadowing false
 skinparam defaultFontName "Noto Sans CJK SC"
@@ -19,13 +19,12 @@ rectangle "宠物医疗管理系统" {
     usecase "接诊登记" as E1
     usecase "录入电子病历" as E2
     usecase "开具处方" as E3
-    usecase "查询药品与禁忌" as E4
+    usecase "处方库存校验" as E4
   }
 
-  package "查询与统计" {
+  package "查询" {
     usecase "查看宠物历史病历" as F1
     usecase "查询宠物档案" as F2
-    usecase "查看本人接诊统计" as F3
   }
 }
 
@@ -39,8 +38,7 @@ Doctor --> E3
 Doctor --> E4
 Doctor --> F1
 Doctor --> F2
-Doctor --> F3
 
-E3 ..> E4 : <<include>>
 E2 ..> E1 : <<include>>
+E3 ..> E4 : <<include>>
 @enduml
